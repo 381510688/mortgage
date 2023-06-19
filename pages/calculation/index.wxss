@@ -1,0 +1,22 @@
+/* pages/calculation/index.wxss */
+.title {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgb(49, 113, 245);
+    color: rgb(255, 255, 255);
+}
+
+.t-tabs__nav {
+    font-size: 16px;
+    font-weight: 400;
+}
+.t-tabs__track.t-tabs__track--top {
+    height: 4px;
+    width: 20px;
+}
+.main {
+    margin-bottom: 16px;
+}

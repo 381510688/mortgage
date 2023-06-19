@@ -1,0 +1,120 @@
+<!--components/commery/index.wxml-->
+<view class="commery-container">
+    <t-input 
+    label="贷款总额" 
+    t-class-label="custom-label"
+    placeholder="填写贷款总额" 
+    suffix="万" 
+    type="number"
+    model:value="{{principal}}"/>
+    <t-input 
+        label="贷款年限" 
+        t-class-label="custom-label"
+        placeholder="请选择贷款年限" 
+        suffixIcon="{{ { name: 'chevron-right', ariaLabel: '选择' } }}" 
+        value="{{timeLimitText}}"
+        bind:click="onTimeLimitPicker"/>
+    <t-input 
+        label="利率方式" 
+        t-class-label="custom-label"
+        placeholder="请选择利率方式" 
+        suffixIcon="{{ { name: 'chevron-right', ariaLabel: '选择' } }}" 
+        value="{{rateModeText}}"
+        bind:click="onRateModePicker"/>
+    <view wx:if="{{isLPR}}">
+        <t-input 
+            label="LPR" 
+            t-class-label="custom-label"
+            placeholder="LPR" 
+            suffix="%"  
+            type="number" 
+            model:value="{{lpr}}"/>
+        <view class="tips">
+            <t-tag class="margin-16" theme="primary">08.22</t-tag>
+            <text>LPR：一年期3.65，五年期4.3%</text>
+            <t-button 
+                class="historicalRecord" 
+                theme="primary" 
+                variant="text"
+                bind:tap="onHistroyPopup"
+                >历史LPR</t-button>
+        </view>
+        <t-input 
+            label="基点" 
+            t-class-label="custom-label"
+            placeholder="请填写基点" 
+            model:value="{{cardinalPoint}}" 
+            suffix="‱"  />
+        <t-input 
+            disabled 
+            label="利率" 
+            t-class-label="custom-label"
+            placeholder="请填写利率" 
+            value="{{lpr + '% + ' + cardinalPoint + '‱ = ' + (lpr + cardinalPoint / 100) + '%'}}"/>    
+    </view>
+    <view wx:else>
+        <t-input 
+            label="贷款利率" 
+            t-class-label="custom-label"
+            placeholder="贷款利率" 
+            suffix="%"  
+            type="number" 
+            model:value="{{rate}}"/>    
+    </view>
+
+    <!-- 贷款年限Picker -->
+    <t-picker
+        visible="{{timeLimitVisible}}"
+        data-key="timeLimit"
+        title="商贷年限"
+        cancelBtn="取消"
+        confirmBtn="确认"
+        bindchange="onPickerChange"
+        bindpick="onColumnChange"
+        bindcancel="onPickerCancel">
+        <t-picker-item options="{{timeLimits}}" />
+    </t-picker>
+    <!-- 利率方式Picker -->
+    <t-picker
+        visible="{{rateModeVisible}}"
+        data-key="rateMode"
+        title="利率方式"
+        cancelBtn="取消"
+        confirmBtn="确认"
+        bindchange="onPickerChange"
+        bindpick="onColumnChange"
+        bindcancel="onPickerCancel">
+        <t-picker-item options="{{rateModes}}" />
+    </t-picker>
+
+    <!-- 历史LPR弹窗 -->
+    <t-popup 
+        visible="{{historicalRecordVisible}}" 
+        placement="center">
+        <view class="popup-container">
+            <text class="title">LPR(贷款市场报价利率)</text>
+            <view>自2019年10月8日起，新发放的商业住房贷款的贷款利率由<text class="keyPoint">“贷款基准利率(4.9%)”转换为“贷款市场报价利率(LPR)"</text>。在LPR的基础上增加基点来确定最终的商贷利率; LPR每月20日(遇节假日顺延)报价一次，可在中国人民银行网站查询。</view>
+            <text class="subtitle">最近一年LPR值</text>
+            <view>(贷款年限在1-5年期间，由银行自主选择采用一年期or五年期LPR)</view>
+            <!-- 表格 -->
+            <view class="table">
+                <view class="header">
+                    <text class="border">发布时间</text>
+                    <text class="border">一年期</text>
+                    <text>五年期</text>
+                </view>
+                <view>
+                    <text class="border">2022/8/22</text>
+                    <text class="border">3.65%</text>
+                    <text>4.3%</text>
+                </view>
+            </view>
+            <!-- 按钮 -->
+            <t-button 
+                theme="primary"  
+                block
+                variant="outline"
+                bind:tap="closeHistoricalRecord">知道了</t-button>
+        </view>
+    </t-popup>
+</view>

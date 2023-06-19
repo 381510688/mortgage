@@ -1,0 +1,26 @@
+<!--pages/calculation/index.wxml-->
+<view>
+    <text class="title">房贷计算</text>
+    <!-- tabs切换 -->
+    <t-tabs 
+    sticky="{{true}}"
+    value="{{currentType}}"
+    defaultValue="commery" 
+    bind:click="onTabsClick" t-class="custom-tabs"
+    t-class-content="custom-panel">
+        <t-tab-panel label="商业贷款" value="commery" />
+        <t-tab-panel label="组合贷款" value="combination" />
+        <t-tab-panel label="公积金贷款" value="fund" />
+    </t-tabs>
+    <!-- 主内容 -->
+    <scroll-view class="main">
+       <lg-commery id="commery"></lg-commery>
+    </scroll-view>
+    <!-- 操作按钮 -->
+    <t-button 
+        theme="primary" 
+        size="large" 
+        bind:tap="computResult"
+        block>开始计算</t-button>
+</view>
+
