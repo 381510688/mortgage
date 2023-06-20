@@ -1,0 +1,39 @@
+<!--components/result-compare/index.wxml-->
+<wxs module="filter" src="../../utils/filter.wxs"></wxs>
+<view class="result-compare">
+    <t-row gutter="10" class="row header">
+        <t-col offset="6" span="9" t-class="col">等额本息</t-col>
+        <t-col span="9" t-class="col">等额本金</t-col>
+    </t-row>
+    <t-row gutter="10" class="row">
+        <t-col span="6" t-class="col">贷款总额</t-col>
+        <t-col span="9" t-class="col">{{filter.toTenThousand(data.P)}}</t-col>
+        <t-col span="9" t-class="col">{{filter.toTenThousand(data.P)}}</t-col>
+    </t-row>
+    <t-row gutter="10" class="row">
+        <t-col span="6" t-class="col">还款总额</t-col>
+        <t-col span="9" t-class="col">{{filter.toTenThousand(data.S1)}}</t-col>
+        <t-col span="9" t-class="col">{{filter.toTenThousand(data.S2)}}</t-col>
+    </t-row>
+    <t-row gutter="10" class="row details">
+        <t-col span="6" t-class="col">月供明细</t-col>
+        <t-col span="9" t-class="col">
+            <view>
+                <view class="txt">{{filter.toFixedThree(data.Y1)}}</view>
+                <view class="txt">\n（每月金额一致）</view>
+            </view>
+        </t-col>
+        <t-col span="9" t-class="col">
+            <view>
+                <view class="txt">首月{{filter.toFixedThree(data.Y2_1)}}</view>
+                <view class="txt">尾月{{filter.toFixedThree(data.Y2_n)}}</view>
+                <view class="txt">（每月递减{{filter.toFixedThree(data.Y2_1 - data.Y2_2)}}）</view>
+            </view>
+        </t-col>
+    </t-row>
+    <view class="tips">
+        两种还款方式对比：
+        <view><text class="keypoint">等额本息：</text>总共需要多支付 <text class="keypoint">{{filter.toFixedThree(data.S1 - data.S2)}}</text> 万元利息</view>
+        <view><text class="keypoint">等额本金：</text>首月 <text class="keypoint">{{filter.toFixedThree(data.Y2_1)}}</text> 元，比等额本息首月多 <text class="keypoint">{{filter.toFixedThree(data.Y2_1 - data.Y1)}}</text>  元。</view>
+    </view>
+</view>

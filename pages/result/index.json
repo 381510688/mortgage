@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "t-tabs": "tdesign-miniprogram/tabs/tabs",
+        "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+        "lg-title": "../../components/title/index",
+        "lg-result": "../../components/result/index",
+        "lg-result-compare": "../../components/result-compare/index"    
+    }
+}

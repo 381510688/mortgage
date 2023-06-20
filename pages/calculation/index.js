@@ -1,5 +1,4 @@
 // pages/calculation/index.js
-import {computeCommery} from '../../utils/compute'
 Page({
 
     /**
@@ -10,15 +9,18 @@ Page({
     },
     onTabsClick (event) {
         console.log(`Click tab, tab-panel value is ${event.detail.value}.`);
+        this.setData({
+            currentType: event.detail.value
+        })
     },
     // 计算
     computResult () {
         let currentType = this.data.currentType;
-        let myComponent = this.selectComponent('#commery');
-
-        console.log(myComponent)
-        computeCommery(myComponent.data, 0)
-        
+        let commeryComponent = this.selectComponent('#commery');
+        let fundComponent = this.selectComponent('#fund')
+        wx.navigateTo({
+            url: `/pages/result/index?commeryData=${JSON.stringify(commeryComponent?.data || {})}&fundData=${JSON.stringify(fundComponent?.data || {})}&currentLoanType=${currentType}`,
+        })
     },
 
     /**

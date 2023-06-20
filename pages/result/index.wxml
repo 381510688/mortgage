@@ -1,0 +1,22 @@
+<!--pages/result/index.wxml-->
+<view>
+    <lg-title></lg-title>
+    <!-- tabs切换 -->
+    <t-tabs 
+    sticky="{{true}}"
+    value="{{currentType}}"
+    defaultValue="0" 
+    bind:click="onTabsClick" t-class="custom-tabs"
+    t-class-content="custom-panel">
+        <t-tab-panel label="等额本息" value="0" />
+        <t-tab-panel label="等额本金" value="1" />
+        <t-tab-panel label="二者对比" value="2" />
+    </t-tabs>
+    <!-- 主内容 -->
+    <scroll-view class="main">
+       <lg-result wx:if="{{currentType !== '2'}}" data="{{result}}" type="{{currentType}}"></lg-result>
+       <lg-result-compare wx:if="{{currentType === '2'}}" data="{{result}}"></lg-result-compare>
+    </scroll-view>
+</view>
+
+

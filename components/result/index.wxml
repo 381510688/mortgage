@@ -1,0 +1,36 @@
+<!--components/result/index.wxml-->
+<wxs module="filter" src="../../utils/filter.wxs"></wxs>
+<view>
+    <t-input  t-class-label="custom-label" label="贷款总额" value="{{filter.toTenThousand(data.P)}}"/>
+    <t-input  t-class-label="custom-label" label="还款总额" value="{{filter.toTenThousand(data.S)}}"/>
+    <t-input  t-class-label="custom-label" label="支付利息" value="{{filter.toTenThousand(data.I)}}"/>
+    <t-input  t-class-label="custom-label highlight" label="{{type === '0' ? '每月应还' : '首月应还'}}" value="{{filter.toFixedThree(data.Y)}}"/>  
+    <view class="tips" wx:if="{{type === '0'}}">
+        <text class="keyPoint">每月还款金额不变，</text>其中还款的本金逐月递增，利息逐月递减。计算结果仅供参考。
+    </view>
+    <view class="tips" wx:if="{{type === '1'}}">
+        <text class="keyPoint">每月还款金额递减{{filter.toFixedThree(data.details[0].Yt - data.details[1].Yt)}}元，</text>其中每月还款的本金不变，利息逐月减少。计算结果仅供参考。
+    </view>
+
+    <!-- 在wxml文件中添加以下代码 -->
+    <view class="table">
+        <text class="title">月供明细</text>
+        <t-sticky offset-top="40">
+            <t-row class="row header">
+                <t-col span="3" t-class="col">期数</t-col>
+                <t-col span="5" t-class="col">月供总额</t-col>
+                <t-col span="5" t-class="col">月供本金</t-col>
+                <t-col span="5" t-class="col">月供利息</t-col>
+                <t-col span="5" t-class="col">剩余本金</t-col>
+            </t-row>
+        </t-sticky>
+        <t-row class="row body" wx:for="{{data.details}}" wx:key="index">
+            <t-col span="3" t-class="col">{{index + 1}}</t-col>
+            <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yt)}}</t-col>
+            <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yp)}}</t-col>
+            <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yi)}}</t-col>
+            <t-col span="5" t-class="col">{{filter.toFixedThree(item.Pr)}}</t-col>
+        </t-row>
+    </view>
+    
+</view>

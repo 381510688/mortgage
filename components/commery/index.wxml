@@ -1,26 +1,26 @@
 <!--components/commery/index.wxml-->
 <view class="commery-container">
     <t-input 
-    label="贷款总额" 
+    label="商贷金额" 
     t-class-label="custom-label"
-    placeholder="填写贷款总额" 
+    placeholder="请填写商贷金额" 
     suffix="万" 
     type="number"
     model:value="{{principal}}"/>
     <t-input 
-        label="贷款年限" 
+        label="商贷年限" 
         t-class-label="custom-label"
-        placeholder="请选择贷款年限" 
+        placeholder="请选择商贷年限" 
         suffixIcon="{{ { name: 'chevron-right', ariaLabel: '选择' } }}" 
         value="{{timeLimitText}}"
-        bind:click="onTimeLimitPicker"/>
+        bind:tap="onTimeLimitPicker"/>
     <t-input 
         label="利率方式" 
         t-class-label="custom-label"
         placeholder="请选择利率方式" 
         suffixIcon="{{ { name: 'chevron-right', ariaLabel: '选择' } }}" 
         value="{{rateModeText}}"
-        bind:click="onRateModePicker"/>
+        bind:tap="onRateModePicker"/>
     <view wx:if="{{isLPR}}">
         <t-input 
             label="LPR" 

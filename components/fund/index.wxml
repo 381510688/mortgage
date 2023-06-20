@@ -1,0 +1,83 @@
+<!--components/fund/index.wxml-->
+<!--components/commery/index.wxml-->
+<view class="fund-container">
+    <t-input 
+    label="公积金金额" 
+    t-class-label="custom-label"
+    placeholder="请填写公积金金额" 
+    suffix="万" 
+    type="number"
+    model:value="{{principal}}"/>
+    <t-input 
+        label="公积金年限" 
+        t-class-label="custom-label"
+        placeholder="请选择公积金年限" 
+        suffixIcon="{{ { name: 'chevron-right', ariaLabel: '选择' } }}" 
+        value="{{timeLimitText}}"
+        bind:click="onTimeLimitPicker"/>
+    <t-input 
+        t-class-label="custom-label"
+        placeholder="公积金利率" 
+        model:value="{{rate}}"
+        type="number" 
+        suffix="%">
+        <label slot="label" style="display: flex;width: 100px;align-items: center" bind:tap="onRatePopup" >
+            <text>利率</text>
+            <t-icon name="help-circle-filled" data-name="help-circle-filled" />
+        </label>
+    </t-input>        
+
+
+    <!-- 贷款年限Picker -->
+    <t-picker
+        visible="{{timeLimitVisible}}"
+        data-key="timeLimit"
+        title="公积金年限"
+        cancelBtn="取消"
+        confirmBtn="确认"
+        bindchange="onPickerChange"
+        bindcancel="onPickerCancel">
+        <t-picker-item options="{{timeLimits}}" />
+    </t-picker>
+    <!-- 公积金利率 -->
+    <t-popup 
+        visible="{{ratePopupVisible}}" 
+        placement="center">
+        <view class="popup-container">
+            <view class="title">住房公积金贷款利率表</view>
+            <!-- 表格 -->
+           <t-row gutter="10" class="row header">
+                <t-col offset="8" span="8" t-class="col">首套住宅</t-col>
+                <t-col span="8" t-class="col">二套住宅</t-col>
+           </t-row>
+           <t-row gutter="10" class="row details">
+                <t-col span="8" t-class="col">
+                    <view>
+                        <text>1至5年\n</text>
+                        <text>(含5年)</text>
+                    </view>
+                </t-col>
+                <t-col span="8" t-class="col">2.6%</t-col>
+                <t-col span="8" t-class="col">3.025%</t-col>
+           </t-row>
+           <t-row gutter="10" class="row details">
+                <t-col span="8" t-class="col">
+                    <view>
+                        <text>6至25年\n</text>
+                        <text>(含25年)</text>
+                    </view>
+                </t-col>
+                <t-col span="8" t-class="col">3.1%</t-col>
+                <t-col span="8" t-class="col">3.575%</t-col>
+           </t-row>
+            <!-- 按钮 -->
+            <t-button 
+                style="margin-top:16px;"
+                theme="primary"  
+                block
+                variant="outline"
+                bind:tap="closeRatePopup">知道了</t-button>
+        </view>
+    </t-popup>
+</view>
+

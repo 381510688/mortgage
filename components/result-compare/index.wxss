@@ -1,0 +1,40 @@
+/* components/result-compare/index.wxss */
+.result-compare {
+    margin: 10px;
+}
+.row {
+    font-size: 13px;
+    text-align: center;
+    line-height: 30px;
+}
+.row.details .col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+.row.header{
+    background-color: rgba(200, 200, 200, 0.8);
+    font-weight: 500;
+}
+.col {
+    border-left: 1px solid rgba(200, 200, 200, 1);
+    border-bottom: 1px solid rgba(200, 200, 200, 1);
+}
+.col:last-child {
+    border-right: 1px solid rgba(200, 200, 200, 1);
+}
+.col .txt {
+    line-height: 16px;
+    white-space: nowrap;
+}
+.tips {
+    background-color: rgba(241, 246, 255, 0.8);
+    line-height: 1.5;
+    font-size: 13px;
+    color: rgb(51, 51, 51);
+    margin-top: 16px;
+}
+.tips .keypoint {
+    font-weight: 650;
+}

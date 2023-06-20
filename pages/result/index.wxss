@@ -1,0 +1,12 @@
+/* pages/result/index.wxss */
+.t-tabs__nav {
+    font-size: 16px;
+    font-weight: 400;
+}
+.t-tabs__track.t-tabs__track--top {
+    height: 4px;
+    width: 20px;
+}
+.main {
+    margin-bottom: 16px;
+}

@@ -1,0 +1,13 @@
+var filters = {
+    toTenThousand: function (value) {
+        return (value / 10000).toFixed(2) + '万';
+    },
+    toFixedThree: function (value) {
+        return value.toFixed(2);
+    }
+}
+
+module.exports = {
+    toTenThousand: filters.toTenThousand,
+    toFixedThree: filters.toFixedThree
+}

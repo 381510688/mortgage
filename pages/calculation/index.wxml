@@ -1,6 +1,6 @@
 <!--pages/calculation/index.wxml-->
-<view>
-    <text class="title">房贷计算</text>
+<view class="container">
+    <lg-title></lg-title>
     <!-- tabs切换 -->
     <t-tabs 
     sticky="{{true}}"
@@ -9,12 +9,14 @@
     bind:click="onTabsClick" t-class="custom-tabs"
     t-class-content="custom-panel">
         <t-tab-panel label="商业贷款" value="commery" />
-        <t-tab-panel label="组合贷款" value="combination" />
         <t-tab-panel label="公积金贷款" value="fund" />
+        <t-tab-panel label="组合贷款" value="portfolio" />
     </t-tabs>
     <!-- 主内容 -->
     <scroll-view class="main">
-       <lg-commery id="commery"></lg-commery>
+       <lg-commery wx:if="{{currentType !== 'fund'}}" id="commery"></lg-commery>
+       <view wx:if="{{currentType === 'portfolio'}}" style="height: 10px;"></view>
+       <lg-fund wx:if="{{currentType !== 'commery'}}" id="fund"></lg-fund>
     </scroll-view>
     <!-- 操作按钮 -->
     <t-button 
