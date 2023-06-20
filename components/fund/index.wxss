@@ -6,7 +6,7 @@
 }
 .popup-container {
     width: 80vw;
-    height: 300px;
+    height: 255px;
     background: #fff;
     padding: 16px 16px;
     color: rgb(51, 51, 51);
@@ -19,7 +19,8 @@
     font-size: 16px;
     line-height: 30px;
     font-weight: 700;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 4px;
 }
 .row {
     font-size: 14px;
@@ -27,21 +28,24 @@
     line-height: 30px;
 }
 .row.header{
-    background-color: rgba(200, 200, 200, 0.8);
+    background-color: rgba(230, 230, 230, 0.6);
     font-weight: 500;
+}
+.row.header .col {
+    border-top: 1px solid rgba(230, 230, 230, 1);
 }
 .row.details .col {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    height: 60px;
     line-height: 16px;
 }
 .col {
-    border-left: 1px solid rgba(200, 200, 200, 1);
-    border-bottom: 1px solid rgba(200, 200, 200, 1);
+    border-left: 1px solid rgba(230, 230, 230, 1);
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
     white-space: nowrap;
 }
 .col:last-child {
-    border-right: 1px solid rgba(200, 200, 200, 1);
+    border-right: 1px solid rgba(230, 230, 230, 1);
 }

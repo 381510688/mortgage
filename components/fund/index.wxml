@@ -47,7 +47,8 @@
             <view class="title">住房公积金贷款利率表</view>
             <!-- 表格 -->
            <t-row gutter="10" class="row header">
-                <t-col offset="8" span="8" t-class="col">首套住宅</t-col>
+                <t-col span="8" t-class="col">贷款年限</t-col>
+                <t-col span="8" t-class="col">首套住宅</t-col>
                 <t-col span="8" t-class="col">二套住宅</t-col>
            </t-row>
            <t-row gutter="10" class="row details">
@@ -72,7 +73,7 @@
            </t-row>
             <!-- 按钮 -->
             <t-button 
-                style="margin-top:16px;"
+                style="margin-top:28px;"
                 theme="primary"  
                 block
                 variant="outline"

@@ -1,6 +1,5 @@
 <!--pages/result/index.wxml-->
 <view>
-    <lg-title></lg-title>
     <!-- tabs切换 -->
     <t-tabs 
     sticky="{{true}}"

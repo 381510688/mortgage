@@ -1,6 +1,5 @@
 <!--pages/calculation/index.wxml-->
 <view class="container">
-    <lg-title></lg-title>
     <!-- tabs切换 -->
     <t-tabs 
     sticky="{{true}}"

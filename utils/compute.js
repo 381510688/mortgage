@@ -12,8 +12,8 @@ function loanCalculator (data, type) {
     let Y, S, I, details = [];
     switch (type) {
         case '0':
-            let _temp = Math.pow((i + 1), n)
-            Y = (P * _temp * i) / (_temp - 1);  // 月供
+            let _temp1 = Math.pow((i + 1), n)
+            Y = (P * _temp1 * i) / (_temp1 - 1);  // 月供
             S = n * Y;  // 累计还款
             I = S - P;  // 累计利息
             for (let k = 1; k <= n; k++) {
@@ -45,8 +45,8 @@ function loanCalculator (data, type) {
             }
             break;
         case '2': 
-            let _temp = Math.pow((1 + i), n)
-            let Y1 = (P * _temp * i) / (_temp - 1);  // 月供
+            let _temp2 = Math.pow((1 + i), n)
+            let Y1 = (P * _temp2 * i) / (_temp2 - 1);  // 月供
             let S1 = n * Y1;  // 累计还款
             let I1 = S1 - P;  // 累计利息
             let S2 = P * i * ((n + 1) / 2) + P;

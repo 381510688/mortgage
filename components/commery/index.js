@@ -59,7 +59,7 @@ Component({
             { label: '30年', value: 30 }
         ],
         rateModes: [
-            { label: '按旧版基准利率', value: '1' },
+            { label: '按基准利率', value: '1' },
             { label: '按LPR', value: '2' }
         ]
         

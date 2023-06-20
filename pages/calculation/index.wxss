@@ -1,6 +1,6 @@
 /* pages/calculation/index.wxss */
 .container {
-    padding-bottom: 10px;
+    padding: 0 6px 10px;
 }
 .t-tabs__nav {
     font-size: 16px;

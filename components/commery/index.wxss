@@ -1,4 +1,7 @@
 /* components/commery/index.wxss */
+.commery-container {
+    --td-input-disabled-text-color: rgba(0,0,0,0.9);
+}
 .custom-label{
     font-weight: 800;
     display: inline-block;
@@ -45,7 +48,7 @@
     border: 1px solid rgba(230, 230, 230);
 }
 .table .header {
-    background-color: rgba(230, 230, 230, 0.6);
+    background-color: rgba(230, 230, 230, 1);
 }
 .table text {
     display: inline-block;
@@ -57,5 +60,4 @@
 .border {
     border-right: 1px solid rgba(230, 230, 230);
 }
-
-    
+ 

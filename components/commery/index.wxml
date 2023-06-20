@@ -50,7 +50,7 @@
             label="利率" 
             t-class-label="custom-label"
             placeholder="请填写利率" 
-            value="{{lpr + '% + ' + cardinalPoint + '‱ = ' + (lpr + cardinalPoint / 100) + '%'}}"/>    
+            value="{{(lpr + cardinalPoint / 100) + '%（' + lpr + '% + ' + cardinalPoint + '‱）'}}"/>    
     </view>
     <view wx:else>
         <t-input 

@@ -4,7 +4,6 @@
         "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
         "t-button": "tdesign-miniprogram/button/button",
         "lg-commery": "../../components/commery/index",
-        "lg-fund": "../../components/fund/index",
-        "lg-title": "../../components/title/index"
+        "lg-fund": "../../components/fund/index"
     }
 }
