@@ -10,7 +10,6 @@ Page({
         currentType: 'commery'
     },
     onTabsClick (event) {
-        console.log(`Click tab, tab-panel value is ${event.detail.value}.`);
         this.setData({
             currentType: event.detail.value
         })

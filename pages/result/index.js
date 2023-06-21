@@ -18,7 +18,6 @@ Page({
         this.setData({
             currentType: key
         })
-        console.log(`Click tab, tab-panel value is ${event.detail.value}.`);
         let result = {};
         switch (this.data.currentLoanType) {
             case 'commery':
@@ -32,7 +31,6 @@ Page({
                 break;
         }
         this.setData({result})
-        console.log(result)
     },
 
     /**
@@ -40,7 +38,6 @@ Page({
      */
     onLoad: function (options) {
         // commery|fund|portfolio
-        console.log(options)
         let currentLoanType = options.currentLoanType;  // 商业贷款、公积金贷款、组合贷款
         this.setData({
             commeryData: JSON.parse(options.commeryData),

@@ -58,7 +58,6 @@ Component({
         onPickerChange(e) {
             const { key } = e.currentTarget.dataset;
             const { value, label } = e.detail;
-            console.log('picker change:', e.detail);
             this.setData({
               [`${key}Visible`]: false,
               [`${key}Value`]: value[0],
@@ -67,8 +66,6 @@ Component({
         },
         onPickerCancel(e) {
             const { key } = e.currentTarget.dataset;
-            console.log(e, '取消');
-            console.log('picker1 cancel:');
             this.setData({
               [`${key}Visible`]: false,
             });
