@@ -1,4 +1,5 @@
 // components/commery/index.js
+import {LPR_VALUE} from '../../utils/config'
 Component({
     /**
      * 组件的属性列表
@@ -11,6 +12,7 @@ Component({
      * 组件的初始数据
      */
     data: {
+        LPR_VALUE: LPR_VALUE,
         principal: 0,       // 本金
         timeLimitVisible: false,
         timeLimitValue: 25,            // 贷款年期
@@ -19,9 +21,9 @@ Component({
         rateModeValue: '2',
         rateModeText: '按LPR',
 
-        lpr: 4.3,     // lpr
+        lpr: LPR_VALUE[2],     // lpr
         cardinalPoint: 55,   // 基点
-        rate: 4.85,       // 利率
+        rate: LPR_VALUE[2] + 55,       // 利率
         isLPR: true,      // 是否为LPR方式
         
         historicalRecordVisible: false, // 历史 LPR

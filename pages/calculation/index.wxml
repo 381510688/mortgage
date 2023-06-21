@@ -2,6 +2,7 @@
 <view class="container">
     <!-- tabs切换 -->
     <t-tabs 
+    style="z-index: 10;"
     sticky="{{true}}"
     value="{{currentType}}"
     defaultValue="commery" 
@@ -19,6 +20,7 @@
     </scroll-view>
     <!-- 操作按钮 -->
     <t-button 
+        t-class="external-class"
         theme="primary" 
         size="large" 
         bind:tap="computResult"

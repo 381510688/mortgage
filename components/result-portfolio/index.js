@@ -42,10 +42,10 @@ Component({
             let details = []
             for (let i = 0; i < len; i++) {
                 details.push({
-                    Yt: (data1[i].Yt || 0) + ( data2[i].Yt || 0), // 月供总额
-                    Yp: (data1[i].Yp || 0) + (data2[i].Yp || 0), // 月供本金
-                    Yi: (data1[i].Yi || 0) + (data2[i].Yi || 0), // 月供利息
-                    Pr: (data1[i].Pr || 0) + (data2[i].Pr || 0) // 剩余本金
+                    Yt: (data1[i]?.Yt || 0) + ( data2[i]?.Yt || 0), // 月供总额
+                    Yp: (data1[i]?.Yp || 0) + (data2[i]?.Yp || 0), // 月供本金
+                    Yi: (data1[i]?.Yi || 0) + (data2[i]?.Yi || 0), // 月供利息
+                    Pr: (data1[i]?.Pr || 0) + (data2[i]?.Pr || 0) // 剩余本金
                 })
             }
             this.setData({

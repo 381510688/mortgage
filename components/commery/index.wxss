@@ -7,8 +7,8 @@
     display: inline-block;
     width: 100px;
 }
-.margin-16 {
-    margin: 10px;
+.margin-8 {
+    margin: 8px;
 }
 .tips {
     line-height: 40px;

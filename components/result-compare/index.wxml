@@ -2,7 +2,8 @@
 <wxs module="filter" src="../../utils/filter.wxs"></wxs>
 <view class="result-compare">
     <t-row gutter="10" class="row header">
-        <t-col offset="6" span="9" t-class="col">等额本息</t-col>
+        <t-col span="6" t-class="col">条目</t-col>
+        <t-col span="9" t-class="col">等额本息</t-col>
         <t-col span="9" t-class="col">等额本金</t-col>
     </t-row>
     <t-row gutter="10" class="row">
@@ -14,6 +15,11 @@
         <t-col span="6" t-class="col">还款总额</t-col>
         <t-col span="9" t-class="col">{{filter.toTenThousand(data.S1)}}</t-col>
         <t-col span="9" t-class="col">{{filter.toTenThousand(data.S2)}}</t-col>
+    </t-row>
+    <t-row gutter="10" class="row">
+        <t-col span="6" t-class="col">利息总额</t-col>
+        <t-col span="9" t-class="col">{{filter.toTenThousand(data.S1 - data.P)}}</t-col>
+        <t-col span="9" t-class="col">{{filter.toTenThousand(data.S2 - data.P)}}</t-col>
     </t-row>
     <t-row gutter="10" class="row details">
         <t-col span="6" t-class="col">月供明细</t-col>
