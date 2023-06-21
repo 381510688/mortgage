@@ -1,0 +1,42 @@
+<!--components/result-portfolio/index.wxml-->
+<wxs module="filter" src="../../utils/filter.wxs"></wxs>
+<view class="result-portfolio">
+    <t-row gutter="10" class="row header">
+        <t-col offset="6" span="6" t-class="col">总额</t-col>
+        <t-col span="6" t-class="col">商业贷款</t-col>
+        <t-col span="6" t-class="col">公积金贷款</t-col>
+    </t-row>
+    <t-row gutter="10" class="row">
+        <t-col span="6" t-class="col">贷款金额</t-col>
+        <t-col span="6" t-class="col">{{filter.toTenThousand(data[0].P + data[1].P)}}</t-col>
+        <t-col span="6" t-class="col">{{filter.toTenThousand(data[0].P)}}</t-col>
+        <t-col span="6" t-class="col">{{filter.toTenThousand(data[1].P)}}</t-col>
+    </t-row>
+    <t-row gutter="10" class="row">
+        <t-col span="6" t-class="col">还款金额</t-col>
+        <t-col span="6" t-class="col">{{filter.toTenThousand(data[0].S + data[1].S)}}</t-col>
+        <t-col span="6" t-class="col">{{filter.toTenThousand(data[0].S)}}</t-col>
+        <t-col span="6" t-class="col">{{filter.toTenThousand(data[1].S)}}</t-col>
+    </t-row>
+    <t-row gutter="10" class="row">
+        <t-col span="6" t-class="col">支付利息</t-col>
+        <t-col span="6" t-class="col">{{filter.toTenThousand(data[0].I + data[1].I)}}</t-col>
+        <t-col span="6" t-class="col">{{filter.toTenThousand(data[0].I)}}</t-col>
+        <t-col span="6" t-class="col">{{filter.toTenThousand(data[1].I)}}</t-col>
+    </t-row>
+    <t-row gutter="10" class="row">
+        <t-col span="6" t-class="col">{{type === '0' ? '每月应还' : '首月应还'}}</t-col>
+        <t-col span="6" t-class="col">{{filter.toFixedThree(data[0].Y + data[1].Y)}}</t-col>
+        <t-col span="6" t-class="col">{{filter.toFixedThree(data[0].Y)}}</t-col>
+        <t-col span="6" t-class="col">{{filter.toFixedThree(data[1].Y)}}</t-col>
+    </t-row>
+
+    <view class="tips" wx:if="{{type === '0'}}">
+        <text class="keyPoint">每月还款金额不变，</text>其中还款的本金逐月递增，利息逐月递减。计算结果仅供参考。
+    </view>
+    <view class="tips" wx:if="{{type === '1'}}">
+        <text class="keyPoint">每月还款金额递减{{filter.toFixedThree((data[0].details[0].Yt + data[1].details[0].Yt) - (data[0].details[1].Yt + data[1].details[1].Yt))}}元，</text>其中每月还款的本金不变，利息逐月减少。计算结果仅供参考。
+    </view>
+
+    <lg-result-details details="{{details}}"></lg-result-details>
+</view>    

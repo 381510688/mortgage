@@ -1,0 +1,23 @@
+/* components/result-details/index.wxss */
+.table .title {
+    display: inline-block;
+    margin: 6px 4px 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.table .row {
+    font-size: 14px;
+    text-align: center;
+}
+.table .row.header{
+    background-color: rgba(200, 200, 200, 1);
+    line-height: 30px;
+    font-size: 13px;
+}
+.table .row.body{
+    font-size: 12px; 
+    line-height: 25px;
+}
+.table .row.body:nth-child(even) {
+    background-color: rgba(200, 200, 200, 0.8);
+}

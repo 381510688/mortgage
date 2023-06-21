@@ -12,25 +12,6 @@
         <text class="keyPoint">每月还款金额递减{{filter.toFixedThree(data.details[0].Yt - data.details[1].Yt)}}元，</text>其中每月还款的本金不变，利息逐月减少。计算结果仅供参考。
     </view>
 
-    <!-- 在wxml文件中添加以下代码 -->
-    <view class="table">
-        <text class="title">月供明细</text>
-        <t-sticky offset-top="40">
-            <t-row class="row header">
-                <t-col span="3" t-class="col">期数</t-col>
-                <t-col span="5" t-class="col">月供总额</t-col>
-                <t-col span="5" t-class="col">月供本金</t-col>
-                <t-col span="5" t-class="col">月供利息</t-col>
-                <t-col span="5" t-class="col">剩余本金</t-col>
-            </t-row>
-        </t-sticky>
-        <t-row class="row body" wx:for="{{data.details}}" wx:key="index">
-            <t-col span="3" t-class="col">{{index + 1}}</t-col>
-            <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yt)}}</t-col>
-            <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yp)}}</t-col>
-            <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yi)}}</t-col>
-            <t-col span="5" t-class="col">{{filter.toFixedThree(item.Pr)}}</t-col>
-        </t-row>
-    </view>
-    
+    <!-- 月供明细 -->
+    <lg-result-details details="{{data.details}}"></lg-result-details>
 </view>

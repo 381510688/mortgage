@@ -3,6 +3,7 @@
         "t-tabs": "tdesign-miniprogram/tabs/tabs",
         "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
         "lg-result": "../../components/result/index",
+        "lg-result-portfolio": "../../components/result-portfolio/index",
         "lg-result-compare": "../../components/result-compare/index"    
     }
 }

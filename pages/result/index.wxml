@@ -13,8 +13,12 @@
     </t-tabs>
     <!-- 主内容 -->
     <scroll-view class="main">
-       <lg-result wx:if="{{currentType !== '2'}}" data="{{result}}" type="{{currentType}}"></lg-result>
-       <lg-result-compare wx:if="{{currentType === '2'}}" data="{{result}}"></lg-result-compare>
+        <!-- 两者对比 -->
+        <lg-result-compare wx:if="{{currentType === '2'}}" originalData="{{result}}"></lg-result-compare>
+        <!-- 组合贷款 -->
+        <lg-result-portfolio wx:if="{{currentType !== '2' && currentLoanType === 'portfolio'}}" data="{{result}}" type="{{currentType}}"></lg-result-portfolio>
+        <!-- 商贷|公积金贷款 -->
+        <lg-result wx:if="{{currentType !== '2' && currentLoanType !== 'portfolio'}}" data="{{result}}" type="{{currentType}}"></lg-result>
     </scroll-view>
 </view>
 

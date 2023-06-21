@@ -10,7 +10,13 @@ Component({
         },
         data: {
             type: Object,
-            value: {}
+            value: {
+                P: 0,
+                S: 0,
+                I: 0,
+                Y: 0,
+                details: []
+            }
         }
     },
 

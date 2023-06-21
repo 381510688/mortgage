@@ -68,7 +68,9 @@ function loanCalculator (data, type) {
  * 组合贷款
  */
 function portfolioLoanCalculator (data1, data2, type) {
-    
+    let result = [];
+    result.push(loanCalculator(data1, type), loanCalculator(data2, type));
+    return result;
 }
 
 

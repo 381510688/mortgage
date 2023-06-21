@@ -1,0 +1,21 @@
+<!--components/result-details/index.wxml-->
+<wxs module="filter" src="../../utils/filter.wxs"></wxs>
+<view class="table">
+    <text class="title">月供明细</text>
+    <t-sticky offset-top="40">
+        <t-row class="row header">
+            <t-col span="3" t-class="col">期数</t-col>
+            <t-col span="5" t-class="col">月供总额</t-col>
+            <t-col span="5" t-class="col">月供本金</t-col>
+            <t-col span="5" t-class="col">月供利息</t-col>
+            <t-col span="5" t-class="col">剩余本金</t-col>
+        </t-row>
+    </t-sticky>
+    <t-row class="row body" wx:for="{{details}}" wx:key="index">
+        <t-col span="3" t-class="col">{{index + 1}}</t-col>
+        <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yt)}}</t-col>
+        <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yp)}}</t-col>
+        <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yi)}}</t-col>
+        <t-col span="5" t-class="col">{{filter.toFixedThree(item.Pr)}}</t-col>
+    </t-row>
+</view>
