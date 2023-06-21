@@ -16,7 +16,7 @@ Component({
         timeLimitValue: 25,       // 贷款年期
         timeLimitText: '25年',    // 贷款年限文本
         ratePopupVisible: false,
-        rate: '',
+        rate: '3.1',
 
         timeLimits: [
             { label: '1年', value: 1 },

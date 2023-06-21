@@ -8,6 +8,7 @@
     type="number"
     model:value="{{principal}}"/>
     <t-input 
+        disabled="{{true}}"
         label="商贷年限" 
         t-class-label="custom-label"
         placeholder="请选择商贷年限" 
@@ -15,6 +16,7 @@
         value="{{timeLimitText}}"
         bind:tap="onTimeLimitPicker"/>
     <t-input 
+        disabled="{{true}}"
         label="利率方式" 
         t-class-label="custom-label"
         placeholder="请选择利率方式" 
@@ -43,6 +45,7 @@
             label="基点" 
             t-class-label="custom-label"
             placeholder="请填写基点" 
+            type="number" 
             model:value="{{cardinalPoint}}" 
             suffix="‱"  />
         <t-input 

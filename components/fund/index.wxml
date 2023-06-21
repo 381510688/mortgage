@@ -2,19 +2,20 @@
 <!--components/commery/index.wxml-->
 <view class="fund-container">
     <t-input 
-    label="公积金金额" 
-    t-class-label="custom-label"
-    placeholder="请填写公积金金额" 
-    suffix="万" 
-    type="number"
-    model:value="{{principal}}"/>
+        label="公积金金额" 
+        t-class-label="custom-label"
+        placeholder="请填写公积金金额" 
+        suffix="万" 
+        type="number"
+        model:value="{{principal}}"/>
     <t-input 
+        disabled="{{true}}"
         label="公积金年限" 
         t-class-label="custom-label"
         placeholder="请选择公积金年限" 
         suffixIcon="{{ { name: 'chevron-right', ariaLabel: '选择' } }}" 
         value="{{timeLimitText}}"
-        bind:click="onTimeLimitPicker"/>
+        bind:tap="onTimeLimitPicker"/>
     <t-input 
         t-class-label="custom-label"
         placeholder="公积金利率" 

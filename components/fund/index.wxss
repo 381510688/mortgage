@@ -1,4 +1,7 @@
 /* components/fund/index.wxss */
+.fund-container {
+    --td-input-disabled-text-color: rgba(0,0,0,0.9);
+}
 .custom-label{
     font-weight: 800;
     display: inline-block;

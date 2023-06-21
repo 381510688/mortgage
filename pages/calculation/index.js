@@ -1,4 +1,6 @@
 // pages/calculation/index.js
+import Toast from 'tdesign-miniprogram/toast/index';
+
 Page({
 
     /**
@@ -18,6 +20,20 @@ Page({
         let currentType = this.data.currentType;
         let commeryComponent = this.selectComponent('#commery');
         let fundComponent = this.selectComponent('#fund')
+        if (commeryComponent && commeryComponent.data.principal <= 0) {
+            return Toast({
+                context: this,
+                selector: '#t-toast',
+                message: '商贷金额应大于0元',
+            });
+        }
+        if (fundComponent && fundComponent.data.principal <= 0) {
+            return Toast({
+                context: this,
+                selector: '#t-toast',
+                message: '公积金金额应大于0元',
+            });
+        }
         wx.navigateTo({
             url: `/pages/result/index?commeryData=${JSON.stringify(commeryComponent?.data || {})}&fundData=${JSON.stringify(fundComponent?.data || {})}&currentLoanType=${currentType}`,
         })

@@ -3,6 +3,7 @@
         "t-tabs": "tdesign-miniprogram/tabs/tabs",
         "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
         "t-button": "tdesign-miniprogram/button/button",
+        "t-toast": "tdesign-miniprogram/toast/toast",
         "lg-commery": "../../components/commery/index",
         "lg-fund": "../../components/fund/index"
     }

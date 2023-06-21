@@ -25,5 +25,7 @@
         size="large" 
         bind:tap="computResult"
         block>开始计算</t-button>
+    <!-- 提示 -->
+    <t-toast id="t-toast" />
 </view>
 
