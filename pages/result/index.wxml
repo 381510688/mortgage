@@ -2,6 +2,7 @@
 <view>
     <!-- tabs切换 -->
     <t-tabs 
+    style="z-index: 10;"
     sticky="{{true}}"
     value="{{currentType}}"
     defaultValue="0" 
