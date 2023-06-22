@@ -1,9 +1,11 @@
 var filters = {
     toTenThousand: function (value) {
         if (!value) return value;
+        if (value < 10000) return filters.toFixedThree(value);
         return (value / 10000).toFixed(2) + '万';
     },
     toFixedThree: function (value) {
+        if (value == 0) return 0;
         if (!value) return value;
         return (+value).toFixed(2);
     }

@@ -66,7 +66,13 @@ Component({
         ]
         
     },
-
+    observers: {
+        'lpr, cardinalPoint': function (lpr, cardinalPoint) {
+            this.setData({
+                rate:  lpr + cardinalPoint / 100
+            })
+        }
+    },
     /**
      * 组件的方法列表
      */

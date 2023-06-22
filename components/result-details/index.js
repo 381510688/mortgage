@@ -19,8 +19,11 @@ Component({
 
     observers: {
         'details': function (newValue) {
-            this.destroyCtx()
+            console.log('newValue', newValue)
             this.createCtx(newValue)
+            // this.setData({
+            //     recycleList: newValue
+            // })
         }
     },
 
@@ -29,6 +32,10 @@ Component({
      */
     methods: {
         createCtx (data) {
+            if (this.ctx) {
+                console.log('destroyCtx2', this.ctx)
+                this.ctx.destroy()
+            }
             this.ctx = createRecycleContext({
                 id: 'recycleId',
                 dataKey: 'recycleList',
@@ -39,14 +46,9 @@ Component({
                 }
             })
             this.ctx.append(data)
-        },
-        destroyCtx () {
-            if (this.ctx) {
-                this.ctx.destroy()
-            }
+            this.ctx.forceUpdate()
         }
     },
     lifetimes: {
     }
-    
 })

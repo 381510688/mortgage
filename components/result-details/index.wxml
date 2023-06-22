@@ -12,7 +12,7 @@
         </t-row>
     </t-sticky>
 
-    <recycle-view batch="{{true}}" id="recycleId">
+    <recycle-view batch="{{batchSetRecycleData}}" id="recycleId">
         <recycle-item 
             class="item"
             wx:for="{{recycleList}}" wx:key="index">
