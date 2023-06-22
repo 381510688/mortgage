@@ -13,7 +13,7 @@ Component({
      */
     data: {
         LPR_VALUE: LPR_VALUE,
-        principal: 0,       // 本金
+        principal: undefined,       // 本金
         timeLimitVisible: false,
         timeLimitValue: 25,            // 贷款年期
         timeLimitText: '25年',            // 贷款年限文本
@@ -23,7 +23,7 @@ Component({
 
         lpr: LPR_VALUE[2],     // lpr
         cardinalPoint: 55,   // 基点
-        rate: LPR_VALUE[2] + 55,       // 利率
+        rate: LPR_VALUE[2] + 0.55,       // 利率
         isLPR: true,      // 是否为LPR方式
         
         historicalRecordVisible: false, // 历史 LPR

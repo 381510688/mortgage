@@ -19,18 +19,28 @@ Page({
         let currentType = this.data.currentType;
         let commeryComponent = this.selectComponent('#commery');
         let fundComponent = this.selectComponent('#fund')
-        if (commeryComponent && commeryComponent.data.principal <= 0) {
-            return Toast({
-                context: this,
-                selector: '#t-toast',
-                message: '商贷金额应大于0元',
-            });
+        let errorMessage = ''
+        if (fundComponent) {
+            if (!fundComponent.data.principal || fundComponent.data.principal <= 0) {
+                errorMessage = '公积金金额应大于0元'
+            } else if (fundComponent.data.rate <= 0) {
+                errorMessage = '公积金利率值应大于0元'
+            }
         }
-        if (fundComponent && fundComponent.data.principal <= 0) {
+        if (commeryComponent) {
+            if (!commeryComponent.data.principal || commeryComponent.data.principal <= 0) {
+                errorMessage = '商贷金额应大于0元'
+            } else if (commeryComponent.data.lpr <= 0) {
+                errorMessage = 'lpr值应大于0元'
+            } else if (commeryComponent.data.rate <= 0) {
+                errorMessage = '商贷利率值应大于0元'
+            }
+        }
+        if (errorMessage) {
             return Toast({
                 context: this,
                 selector: '#t-toast',
-                message: '公积金金额应大于0元',
+                message: errorMessage
             });
         }
         wx.navigateTo({

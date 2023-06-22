@@ -1,3 +1,4 @@
 page {
-  background: #f6f6f6;
+  --td-input-border-right-space: 32rpx;
+  background: #ffffff;
 }

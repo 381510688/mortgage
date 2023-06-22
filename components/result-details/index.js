@@ -1,4 +1,6 @@
 // components/result-details/index.js
+const createRecycleContext = require('miniprogram-recycle-view')
+let ctx;
 Component({
     /**
      * 组件的属性列表
@@ -14,7 +16,12 @@ Component({
      * 组件的初始数据
      */
     data: {
+    },
 
+    observers: {
+        'details': function (newValue) {
+            ctx?.append(newValue)
+        }
     },
 
     /**
@@ -22,5 +29,19 @@ Component({
      */
     methods: {
 
+    },
+    lifetimes: {
+        attached: function () {
+            ctx = createRecycleContext({
+                id: 'recycleId',
+                dataKey: 'recycleList',
+                page: this,
+                itemSize: { 
+                    width: 300,
+                    height: 25
+                }
+            })
+        }
     }
+    
 })

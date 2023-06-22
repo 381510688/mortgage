@@ -11,11 +11,19 @@
             <t-col span="5" t-class="col">剩余本金</t-col>
         </t-row>
     </t-sticky>
-    <t-row class="row body" wx:for="{{details}}" wx:key="index">
-        <t-col span="3" t-class="col">{{index + 1}}</t-col>
-        <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yt)}}</t-col>
-        <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yp)}}</t-col>
-        <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yi)}}</t-col>
-        <t-col span="5" t-class="col">{{filter.toFixedThree(item.Pr)}}</t-col>
-    </t-row>
+
+    <recycle-view batch="{{true}}" id="recycleId">
+        <recycle-item 
+            class="item"
+            wx:for="{{recycleList}}" wx:key="index">
+            <t-row class="row body">
+                <t-col span="3" t-class="col">{{index + 1}}</t-col>
+                <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yt)}}</t-col>
+                <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yp)}}</t-col>
+                <t-col span="5" t-class="col">{{filter.toFixedThree(item.Yi)}}</t-col>
+                <t-col span="5" t-class="col">{{filter.toTenThousand(item.Pr)}}</t-col>
+            </t-row>
+        </recycle-item>
+    </recycle-view>
+
 </view>

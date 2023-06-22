@@ -5,7 +5,7 @@ var filters = {
     },
     toFixedThree: function (value) {
         if (!value) return value;
-        return value.toFixed(2);
+        return (+value).toFixed(2);
     }
 }
 

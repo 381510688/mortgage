@@ -11,7 +11,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-        principal: 0,       // 本金
+        principal: undefined,       // 本金
         timeLimitVisible: false,
         timeLimitValue: 25,       // 贷款年期
         timeLimitText: '25年',    // 贷款年限文本

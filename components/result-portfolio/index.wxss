@@ -1,7 +1,4 @@
 /* components/result-portfolio/index.wxss */
-.result-portfolio {
-    padding: 10px 10px;
-}
 .row {
     font-size: 13px;
     text-align: center;

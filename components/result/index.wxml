@@ -1,6 +1,6 @@
 <!--components/result/index.wxml-->
 <wxs module="filter" src="../../utils/filter.wxs"></wxs>
-<view>
+<view class="result-container">
     <t-input  t-class-label="custom-label" label="贷款总额" value="{{filter.toTenThousand(data.P)}}"/>
     <t-input  t-class-label="custom-label" label="还款总额" value="{{filter.toTenThousand(data.S)}}"/>
     <t-input  t-class-label="custom-label" label="支付利息" value="{{filter.toTenThousand(data.I)}}"/>

@@ -1,6 +1,6 @@
 <!--components/result-compare/index.wxml-->
 <wxs module="filter" src="../../utils/filter.wxs"></wxs>
-<view class="result-compare">
+<view class="result-compare-container">
     <t-row gutter="10" class="row header">
         <t-col span="6" t-class="col">条目</t-col>
         <t-col span="9" t-class="col">等额本息</t-col>

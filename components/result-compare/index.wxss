@@ -1,6 +1,6 @@
 /* components/result-compare/index.wxss */
-.result-compare {
-    margin: 10px;
+.result-compare-container {
+    padding: 10px;
 }
 .row {
     font-size: 13px;

@@ -23,7 +23,7 @@
         type="number" 
         suffix="%">
         <label slot="label" style="display: flex;width: 100px;align-items: center" bind:tap="onRatePopup" >
-            <text>利率</text>
+            <text style="font-weight: 800;">利率</text>
             <t-icon name="help-circle-filled" data-name="help-circle-filled" />
         </label>
     </t-input>        
