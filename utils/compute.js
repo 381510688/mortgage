@@ -1,4 +1,3 @@
-
 /**
  * 贷款计算
  * @param {*} data 
@@ -59,6 +58,7 @@ function loanCalculator (data, type) {
             }
 
     }
+    console.log(P, Y, S, I, details)
     return {
         P, Y, S, I, details
     }

@@ -26,13 +26,15 @@
     <view wx:if="{{isLPR}}">
         <t-input 
             label="LPR" 
+            borderless="{{true}}"
             t-class-label="custom-label"
             placeholder="LPR" 
             suffix="%"  
             type="number" 
             model:value="{{lpr}}"/>
+        
         <view class="tips">
-            <t-tag class="margin-8" theme="primary">new</t-tag>
+            <t-tag class="margin-4" theme="primary">new</t-tag>
             <text>LPR：一年期{{LPR_VALUE[1]}}%，五年期{{LPR_VALUE[2]}}%</text>
             <t-button 
                 class="historicalRecord" 
@@ -41,6 +43,7 @@
                 bind:tap="onHistroyPopup"
                 >历史LPR</t-button>
         </view>
+        <t-divider style="padding: 0 10px;"/>    
         <t-input 
             label="基点" 
             t-class-label="custom-label"
